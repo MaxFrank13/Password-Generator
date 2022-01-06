@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <section class="generator">
+      <div class="form-header">
+        <h2>Generate a Password</h2>
       </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+      <form class="form hide">
+        <input type="range" id="character-count" name="character-count" min="8" max="128">
+        <label for="character-count">Number of Characters</label><br>
+        <input type="checkbox" id="upper-case" name="upper-case" value="boolean">
+        <label for="upper-case"> Include uppercase characters?</label><br>
+        <input type="checkbox" id="lower-case" name="lower-case" value="boolean">
+        <label for="lower-case"> Include lowercase characters?</label><br>
+        <input type="checkbox" id="numbers" name="numbers" value="boolean">
+        <label for="numbers"> Include numbers?</label><br>
+        <input type="checkbox" id="spec-chars" name="spec-chars" value="boolean">
+        <label for="spec-chars"> Include special characters?</label><br>
+        <input type="checkbox" id="select-all" name="select-all" value="boolean">
+        <label for="select-all"> Select all</label><br>
+      </form>
+      <div class="button-container">
+        <p class="password hide"></p>
+        <button id="generate" class="btn">Generate New Password</button>
+        <button id="create" class="btn hide">Create Password</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
