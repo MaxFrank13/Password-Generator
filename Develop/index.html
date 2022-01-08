@@ -10,35 +10,53 @@
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1>Password Generator</h1>
-    </header>
-    <section class="generator">
-      <div class="form-header">
-        <h2>Generate a Password</h2>
+  <header>
+    <h1>Password Generator</h1>
+  </header>
+  <section class="generator">
+    <div class="form-header">
+      <h3>
+        Press the generate button and then fill out the form below to get started
+      </h3>
+    </div>
+    <form class="form hide">
+      <div class="form-section" id="amount">
+        <div class="form-item">
+          <h3>Enter the amount of characters you would like in your password: </h3>
+          <input type="range" id="character-count" name="character-count" min="8" max="128">
+          <label for="character-count" id="number-display"></label>
+        </div>
       </div>
-      <form class="form hide">
-        <input type="range" id="character-count" name="character-count" min="8" max="128">
-        <label for="character-count">Number of Characters</label><br>
-        <input type="checkbox" id="upper-case" name="upper-case" value="boolean">
-        <label for="upper-case"> Include uppercase characters?</label><br>
-        <input type="checkbox" id="lower-case" name="lower-case" value="boolean">
-        <label for="lower-case"> Include lowercase characters?</label><br>
-        <input type="checkbox" id="numbers" name="numbers" value="boolean">
-        <label for="numbers"> Include numbers?</label><br>
-        <input type="checkbox" id="spec-chars" name="spec-chars" value="boolean">
-        <label for="spec-chars"> Include special characters?</label><br>
-        <input type="checkbox" id="select-all" name="select-all" value="boolean">
-        <label for="select-all"> Select all</label><br>
-      </form>
-      <div class="button-container">
-        <p class="password hide"></p>
-        <button id="generate" class="btn">Generate New Password</button>
-        <button id="create" class="btn hide">Create Password</button>
+      <h3>Select at least 1 of the provided criteria:</h3>
+      <div class="form-section" id="criteria">
+        <div class="form-item">
+          <input type="checkbox" id="upper-case" name="upper-case" value="boolean">
+          <label for="upper-case"> Uppercase</label>
+        </div>
+        <div class="form-item">
+          <input type="checkbox" id="lower-case" name="lower-case" value="boolean">
+          <label for="lower-case"> Lowercase</label>
+        </div>
+        <div class="form-item">
+          <input type="checkbox" id="numbers" name="numbers" value="boolean">
+          <label for="numbers"> Numbers</label>
+        </div>
+        <div class="form-item">
+          <input type="checkbox" id="spec-chars" name="spec-chars" value="boolean">
+          <label for="spec-chars"> Special</label>
+        </div>
+        <div class="form-item">
+          <input type="checkbox" id="select-all" name="select-all" value="boolean">
+          <label for="select-all"> Select all</label>
+        </div>
       </div>
-    </section>
-  </main>
+    </form>
+    <p class="password hide"></p>
+    <div class="button-container">
+      <button id="generate" class="btn">Generate New Password</button>
+      <button id="create" class="btn hide">Create Password</button>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
 
