@@ -6,7 +6,7 @@ This is a simple password generator built using HTML, CSS and JavaScript. The ge
 
 [Password Generator](https://maxfrank13.github.io/Password-Generator/)
 
-![Photo of Password Generator](https://github.com/MaxFrank13/Password-Generator/blob/main/assets/app.photo.png)
+![Photo of Password Generator](https://github.com/MaxFrank13/Password-Generator/blob/main/assets/app-photo.PNG)
 
 
 ## What's happening in the code
