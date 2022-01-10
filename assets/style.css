@@ -18,6 +18,7 @@ h1,
 h2,
 h3,
 h4 {
+  text-align: center;
   margin: 15px auto;
 }
 
@@ -108,7 +109,8 @@ header {
 .btn {
   margin: 0.5rem;
   border: none;
-  background-color: #af0808;
+  background-color: #912707;
+  border: 1px solid black;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 6px 0px;
   color: #ffffff;
@@ -116,6 +118,13 @@ header {
   cursor: pointer;
   padding: 1rem;
   font-size: 1.75rem;
+}
+
+.btn:hover {
+  background-color: #b6611b;
+}
+.btn:active {
+  box-shadow: inset rgba(0, 0, 0, 0.9) 0px 5px 6px 0px, inset rgba(0, 0, 0, 0.9) 0px -5px 6px 0px;
 }
 button[disabled] {
   cursor: default;

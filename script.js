@@ -16,14 +16,16 @@ window.addEventListener("DOMContentLoaded", function () {
   const includeSpecChars = document.getElementById("spec-chars");
   const selectAll = document.getElementById("select-all");
 
-  // **** Button Listeners ****
+  // **** Form Listeners ****
   generateBtn.addEventListener("click", function () {
-    reset();
-    generateBtn.classList.toggle("hide");
-    createBtn.classList.toggle("hide");
-    form.classList.remove("hide");
-    passwordTextBox.classList.add("hide");
-    formHeader.style.opacity = "0.7";
+    if (passwordTextBox.textContent !== "") {
+      let answer = confirm("If you generate another password, the current one will disappear (all generated passwords have been logged to the console)");
+      if (answer) {
+        formSetup();
+      }
+    } else {
+      formSetup();
+    }
   })
 
   createBtn.addEventListener("click", function () {
@@ -45,6 +47,19 @@ window.addEventListener("DOMContentLoaded", function () {
     numberDisplay.textContent = desiredLength.value;
   })
 
+  // arrowkey listeners
+
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") {
+      desiredLength.value++;
+    }
+    if (e.key === "ArrowLeft") {
+      desiredLength.value--;
+    }
+    numberDisplay.textContent = desiredLength.value;
+  })
+
+  // select all listener
   selectAll.addEventListener("click", function (e) {
     if (e.target.checked === true) {
       includeUpperCase.checked = true;
@@ -59,6 +74,8 @@ window.addEventListener("DOMContentLoaded", function () {
     };
   })
 
+
+
   // **** Functions ****
 
   function getPassword(length, upper, lower, nums, specs) {
@@ -72,7 +89,7 @@ window.addEventListener("DOMContentLoaded", function () {
         lower === false && /[a-z]/.test(newVal) ||
         nums === false && /[\d]/.test(newVal) ||
         specs === false && /[/s!"#$%&'()*+,-./:;<=>?@\\[\]^_`{|}~]/.test(newVal)
-        ) { }
+      ) { }
       else if (specs === true && /\s/.test(newVal)) {
         newPasswordArray.push("\xa0");
       }
@@ -86,7 +103,16 @@ window.addEventListener("DOMContentLoaded", function () {
     console.log(newPassword);
   }
 
-  function reset() {
+  function formSetup() {
+    valueReset();
+    generateBtn.classList.toggle("hide");
+    createBtn.classList.toggle("hide");
+    form.classList.remove("hide");
+    passwordTextBox.classList.add("hide");
+    formHeader.style.opacity = "0.7";
+  }
+
+  function valueReset() {
     includeUpperCase.checked = false;
     includeLowerCase.checked = false;
     includeNumbers.checked = false;
