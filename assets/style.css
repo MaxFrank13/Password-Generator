@@ -147,7 +147,6 @@ button[disabled] {
   margin: 10px 0;
   border: 2px dashed #c0c7cf;
   border-radius: 6px;
-  inline-size: 50vw;
   word-wrap: break-word;
   box-shadow: rgb(0 0 0 / 90%) 0px 2px 8px 0px;
 }
