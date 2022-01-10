@@ -140,7 +140,7 @@ button[disabled] {
   border: none;
   display: block;
   width: 85%;
-  padding: 15px 15px 50px;
+  padding: 15px;
   background: #cdd7b5;
   font-size: 1.2rem;
   text-align: center;
